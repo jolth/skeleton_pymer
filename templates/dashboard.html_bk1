@@ -1,0 +1,18 @@
+$def with ()
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<h1>$company</h1>
+usuario: $session.username
+<br>
+count: $session.count
+<br>
+userID: $session.userID
+<br>
+<br>
+<a href="/logout">Logout</a>
+</body>
+</html>
