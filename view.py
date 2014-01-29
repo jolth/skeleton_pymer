@@ -11,5 +11,9 @@ render = web.template.render("templates/", globals={"company": "Dev Microsystem 
 #    l = db.userData(**k)
 #    return render.dashboard(l)
 
+def login(msg=None):
+    return render.login()
+
 def dashboard():
     return render.dashboard()
+

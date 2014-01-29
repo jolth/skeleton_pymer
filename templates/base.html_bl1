@@ -1,0 +1,12 @@
+$def with (page, title=None)
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+   <title>
+    $if title: : $title\
+   </title>
+  </head>
+  <body>
+   $:page
+  </body>
+</html>

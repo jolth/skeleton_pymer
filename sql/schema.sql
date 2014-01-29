@@ -8,10 +8,17 @@
 --**** Systems:
 
 -- sessiones web.py
-CREATE TABLE sessions (  
- session_id CHAR(128) UNIQUE NOT NULL, 
- atime TIMESTAMP NOT NULL default current_timestamp,
- data text   
+--CREATE TABLE sessions (  
+-- session_id CHAR(128) UNIQUE NOT NULL, 
+-- atime TIMESTAMP NOT NULL default current_timestamp,
+-- data text   
+--);
+
+-- sessiones web.py
+CREATE TABLE sessions (
+ session_id CHAR(128) UNIQUE NOT NULL,
+ atime DATETIME NOT NULL default current_timestamp,
+ data TEXT
 );
 
 -- usuarios

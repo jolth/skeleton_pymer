@@ -39,7 +39,7 @@ class login:
         """
             Página de Login
         """
-        return view.render.login() 
+        return view.render.base(view.login(), "Login")
 
     def POST(self):
         """
@@ -62,11 +62,12 @@ class login:
             #print "*"*100
             #print  
             #print "*"*100
+
             #print >> sys.stderr, "Login Successful"
             raise web.seeother("/dashboard")
         else:
             #print >> sys.stderr, "Login Failed"
-            return view.render.login("usuario o contraseña inválida")
+            return view.render.base(view.login("usuario o contraseña inválida"), "Login")
 
 
 class dashboard:
@@ -75,7 +76,6 @@ class dashboard:
         """
         """
         session.count = session.count + 1
-        #return view.render.base(view.dashboard(vars=locals()))
         return view.render.base(view.dashboard(), "dashboard")
 
 class logout:
@@ -84,8 +84,8 @@ class logout:
             Mata la sesión
         """
         session.kill()
-        return view.render.login()
-        #return 'Logout.....'
+        raise web.seeother("/")
+        #return view.render.base(view.login(), "Login")
 
 
 if __name__ == "__main__": app.run()
